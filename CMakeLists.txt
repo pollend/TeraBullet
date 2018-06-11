@@ -13,6 +13,9 @@ SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -fPIC" )
 SET(CMAKE_JNI_TARGET TRUE)
 SET(CMAKE_JAVA_INCLUDE_PATH lib/guava-25.1-jre.jar lib/slf4j-api-1.7.12.jar lib/TeraMath-1.4.0.jar lib/trove4j-3.0.3.jar)
 
+set_source_files_properties(${CMAKE_CURRENT_BINARY_DIR}/swig-src PROPERTIES GENERATED TRUE)
+
+
 add_subdirectory(jni)
 
 file(GLOB_RECURSE JAVA_SWIG_SOURCE "${SWIG_ROOT}/*.java")
