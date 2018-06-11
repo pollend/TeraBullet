@@ -31,34 +31,5 @@ SET(CMAKE_SWIG_OUTDIR ${SWIG_ROOT}/${SWIG_MODULE}/org/terasology/physics/${SWIG_
 SWIG_ADD_LIBRARY(BulletSwig${SWIG_MODULE} LANGUAGE java SOURCES swig/${SWIG_MODULE}/${SWIG_MODULE}.i )
 SWIG_LINK_LIBRARIES(BulletSwig${SWIG_MODULE} BulletWorldImporter BulletCollision BulletDynamics BulletSoftBody LinearMath  ${JAVA_LIBRARY})
 endforeach()
-#
-#SET(CMAKE_SWIG_FLAGS -c++ -package org.terasology.bullet.linearmath )
-#SET(SWIG_OUTFILE_DIR ${SWIG_ROOT}/collision/)
-#SET(CMAKE_SWIG_OUTDIR ${SWIG_ROOT}/collision/org/terasology/physics/collision)
-#SWIG_ADD_LIBRARY(BulletSwigLinearmath LANGUAGE java OUTFILE_DIR linearmath/org/terasology/bullet/linearmath SOURCES swig/linearmath/linearmath.i)
-#
-#SET(CMAKE_SWIG_FLAGS -c++ -package org.terasology.bullet.dynamics )
-#SET(SWIG_OUTFILE_DIR ${SWIG_ROOT}/collision/)
-#SET(CMAKE_SWIG_OUTDIR ${SWIG_ROOT}/collision/org/terasology/physics/collision)
-#SWIG_ADD_LIBRARY(BulletSwigDynamics LANGUAGE java OUTFILE_DIR dynamics/org/terasology/bullet/dynamics SOURCES swig/dynamics/dynamics.i )
-#
-#SET(CMAKE_SWIG_FLAGS -c++ -package org.terasology.bullet.softbody )
-#SET(SWIG_OUTFILE_DIR ${SWIG_ROOT}/collision/)
-#SET(CMAKE_SWIG_OUTDIR ${SWIG_ROOT}/collision/org/terasology/physics/collision)
-#SWIG_ADD_LIBRARY(BulletSwigSoftbody LANGUAGE java OUTFILE_DIR softbody/org/terasology/bullet/softbody SOURCES swig/softbody/softbody.i )
-#
-#SET(CMAKE_SWIG_FLAGS -c++ -package org.terasology.bullet.extras )
-#SET(SWIG_OUTFILE_DIR ${SWIG_ROOT}/collision/)
-#SET(CMAKE_SWIG_OUTDIR ${SWIG_ROOT}/collision/org/terasology/physics/collision)
-#SWIG_ADD_LIBRARY(BulletSwigExtras LANGUAGE java OUTFILE_DIR extras/org/terasology/bullet/extras SOURCES swig/extras/extras.i)
-
-
-
-#SWIG_LINK_LIBRARIES(BulletSwigLinearmath BulletWorldImporter BulletCollision BulletDynamics BulletSoftBody LinearMath ${JAVA_LIBRARY})
-#SWIG_LINK_LIBRARIES(BulletSwigDynamics BulletWorldImporter BulletCollision BulletDynamics BulletSoftBody LinearMath ${JAVA_LIBRARY})
-#SWIG_LINK_LIBRARIES(BulletSwigSoftbody BulletWorldImporter BulletCollision BulletDynamics BulletSoftBody LinearMath ${JAVA_LIBRARY})
-#SWIG_LINK_LIBRARIES(BulletSwigExtras BulletWorldImporter BulletCollision BulletDynamics BulletSoftBody LinearMath ${JAVA_LIBRARY})
-#
-#
 
 

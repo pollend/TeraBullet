@@ -1,7 +1,7 @@
 %module btCollisionObject
 
 %typemap(javainterfaces) btCollisionObject %{
-	com.badlogic.gdx.utils.Disposable
+    org.terasology.bullet.utils.Disposable
 %}
 
 %rename(internalSetCollisionShape) btCollisionObject::setCollisionShape;
