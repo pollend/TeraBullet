@@ -6,6 +6,7 @@ include_directories(src/extras/Serialize)
 
 add_subdirectory(src/bullet)
 add_subdirectory(src/extras/Serialize)
+add_subdirectory(src/custom)
 
 
 if(WIN32)
@@ -25,11 +26,9 @@ SET_SOURCE_FILES_PROPERTIES(swig/softbody/softbody.i SWIG_FLAGS PROPERTIES CPLUS
 SET_SOURCE_FILES_PROPERTIES(swig/extras/extras.i SWIG_FLAGS PROPERTIES CPLUSPLUS ON)
 
 foreach(SWIG_MODULE collision;linearmath;dynamics;softbody;extras)
-SET(CMAKE_SWIG_FLAGS -c++ -package org.terasology.bullet.${SWIG_MODULE} -fvirtual -DBT_NO_PROFILE  )
-SET(SWIG_OUTFILE_DIR ${SWIG_ROOT}/${SWIG_MODULE}/)
-SET(CMAKE_SWIG_OUTDIR ${SWIG_ROOT}/${SWIG_MODULE}/org/terasology/physics/${SWIG_MODULE})
-SWIG_ADD_LIBRARY(BulletSwig${SWIG_MODULE} LANGUAGE java SOURCES swig/${SWIG_MODULE}/${SWIG_MODULE}.i )
-SWIG_LINK_LIBRARIES(BulletSwig${SWIG_MODULE} BulletWorldImporter BulletCollision BulletDynamics BulletSoftBody LinearMath  ${JAVA_LIBRARY})
+    SET(CMAKE_SWIG_FLAGS -c++ -package org.terasology.bullet.${SWIG_MODULE} -fvirtual -DBT_NO_PROFILE  )
+    SET(SWIG_OUTFILE_DIR ${SWIG_ROOT}/${SWIG_MODULE}/)
+    SET(CMAKE_SWIG_OUTDIR ${SWIG_ROOT}/${SWIG_MODULE}/org/terasology/physics/${SWIG_MODULE})
+    SWIG_ADD_LIBRARY(BulletSwig${SWIG_MODULE} LANGUAGE java SOURCES swig/${SWIG_MODULE}/${SWIG_MODULE}.i )
+    SWIG_LINK_LIBRARIES(BulletSwig${SWIG_MODULE} GdxCustom BulletWorldImporter BulletCollision BulletDynamics BulletSoftBody LinearMath  ${JAVA_LIBRARY})
 endforeach()
-
-

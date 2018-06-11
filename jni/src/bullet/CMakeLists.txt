@@ -3,7 +3,10 @@ IF(BUILD_BULLET3)
 	SUBDIRS(  BulletInverseDynamics  )
 ENDIF(BUILD_BULLET3)
 
-SUBDIRS(  BulletSoftBody BulletCollision BulletDynamics LinearMath )
+add_subdirectory(BulletSoftBody)
+add_subdirectory(BulletCollision)
+add_subdirectory(BulletDynamics)
+add_subdirectory(LinearMath)
 
 IF(INSTALL_LIBS)
 	#INSTALL of other files requires CMake 2.6
