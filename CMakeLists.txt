@@ -559,8 +559,20 @@ add_dependencies(TerraBullet BulletSwigcollision
 #ADD_DEPENDENCIES(TerraBullet )
 
 
-file(GLOB_RECURSE SWIG_HDRS "${SWIG_ROOT}/*.h")
-file(GLOB_RECURSE SWIG_SRCS "${SWIG_ROOT}/*.cxx")
+SET(SWIG_HDRS
+    ${SWIG_ROOT}/collision/collisionJAVA_wrap.h
+    ${SWIG_ROOT}/dynamics/dynamicsJAVA_wrap.h
+    ${SWIG_ROOT}/extras/extrasJAVA_wrap.h
+    ${SWIG_ROOT}/linearmath/linearmathJAVA_wrap.h
+    ${SWIG_ROOT}/softbody/softbodyJAVA_wrap.h)
+
+SET(SWIG_SRCS
+        ${SWIG_ROOT}/collision/collisionJAVA_wrap.cxx
+        ${SWIG_ROOT}/dynamics/dynamicsJAVA_wrap.cxx
+        ${SWIG_ROOT}/extras/extrasJAVA_wrap.cxx
+        ${SWIG_ROOT}/linearmath/linearmathJAVA_wrap.cxx
+        ${SWIG_ROOT}/softbody/softbodyJAVA_wrap.cxx)
+
 add_library(combined SHARED  ${SWIG_HDRS} ${SWIG_SRCS})
 set_target_properties(combined PROPERTIES OUTPUT_NAME "TerraBullet")
 target_link_libraries(combined GdxCustom LinearMath BulletWorldImporter BulletCollision BulletDynamics BulletSoftBody )
