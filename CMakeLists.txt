@@ -574,5 +574,5 @@ SET(SWIG_SRCS
         ${SWIG_ROOT}/softbody/softbodyJAVA_wrap.cxx)
 
 add_library(combined SHARED  ${SWIG_HDRS} ${SWIG_SRCS})
-set_target_properties(combined PROPERTIES OUTPUT_NAME "TerraBullet")
+set_target_properties(combined PROPERTIES OUTPUT_NAME "TerraBullet64")
 target_link_libraries(combined GdxCustom LinearMath BulletWorldImporter BulletCollision BulletDynamics BulletSoftBody )

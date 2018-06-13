@@ -50,7 +50,7 @@ public class Bullet {
 	public static void init (boolean useRefCounting, boolean logging) {
 		Bullet.useRefCounting = useRefCounting;
 		Bullet.enableLogging = logging;
-		new SharedLibraryLoader().load("gdx-bullet");
+		new SharedLibraryLoader().load("TerraBullet");
 		final int version = LinearMath.btGetVersion();
 		if (version != VERSION)
 			throw new BulletRuntimeException("Bullet binaries version (" + version + ") does not match source version (" + VERSION
